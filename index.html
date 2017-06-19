@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="KeyGenApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h2>All Possible Keywords</h2>
+    <div ng-controller="GenerateKeywordController as keyGen">
+        <h3 id="all_tags"> Your Keywords are : {{keyGen.all_kg}}
+          <input type="button" name="copy" ng-click="keyGen.copyToClipboard('all_tags')" value="Copy to Clipboard">
+      </h3>
+        <form ng-submit="keyGen.generate_keywords()">
+            <textarea type="text" ng-model="keyGen.heading" size="100" placeholder="Add your tilte here"></textarea>
+            <input class="btn-primary" type="submit" value="Get keywords">
+        </form>
+    </div>
+</body>
+
+</html>
